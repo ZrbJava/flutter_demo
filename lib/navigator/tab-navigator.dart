@@ -12,7 +12,7 @@ class TabNavigator extends StatefulWidget {
 
 class _TabNavigator extends State<TabNavigator> {
   final _defaultColor = Colors.grey;
-  final _activeColor = Colors.blue;
+  final _activeColor = Colors.green;
   int _currentTab = 1;
   final PageController _controller = PageController(
     initialPage: 0,
@@ -25,7 +25,14 @@ class _TabNavigator extends State<TabNavigator> {
         controller: _controller,
         children: <Widget>[Home(), SpageWork(), Msg(), My()],
       ),
+      floatingActionButton:FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: (){
+          print('111');
+        },
+      ),
       bottomNavigationBar: BottomNavigationBar(
+        fixedColor: Colors.blue,
         currentIndex: _currentTab,
         type: BottomNavigationBarType.fixed,
         onTap: (index){
